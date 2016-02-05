@@ -13,7 +13,6 @@ apt:
         - g++-4.8
         - gcc-4.8
 
-install: travis/install-prerequisites.sh
 script:  travis/build-and-test.sh
 
 notifications:
