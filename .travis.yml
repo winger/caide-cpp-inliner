@@ -1,5 +1,9 @@
 language: cpp
-script: travis/build-and-test.sh
+git:
+    submodules: false
+
+install: travis/install-prerequisites.sh
+script:  travis/build-and-test.sh
 
 notifications:
     on_failure: always

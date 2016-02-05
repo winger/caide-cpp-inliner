@@ -9,6 +9,9 @@ enable_testing()
 if(CAIDE_USE_SYSTEM_CLANG)
     # Detect LLVM version
     find_package(LLVM 3.6 REQUIRED CONFIG)
+    if(not LLVM_DIR)
+        message(FATAL_ERROR "LLVM not found! Make sure packages libllvm-dev and libclang-dev are installed")
+    endif()
 
     message(STATUS "Found LLVM ${LLVM_PACKAGE_VERSION}")
     message(STATUS "Using LLVMConfig.cmake in: ${LLVM_DIR}")
