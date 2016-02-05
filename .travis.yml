@@ -1,0 +1,8 @@
+language: cpp
+script: travis/build-and-test.sh
+
+notifications:
+    on_failure: always
+    email:
+        on_success: always
+
