@@ -5,11 +5,8 @@ git:
 
 addons:
     apt:
-        sources:
-            - llvm-toolchain-precise-3.6
-            - llvm-toolchain-precise-3.7
+        sources: &default_sources
             - ubuntu-toolchain-r-test
-            - kubuntu-backports
         packages: &default_packages
             - libedit-dev
             - g++-4.9
@@ -18,21 +15,36 @@ addons:
 matrix:
     include:
         env: CAIDE_LLVM_VER=3.6
-        packages:
-            - *default_packages
-            - libclang-3.6-dev
-            - llvm-3.6-dev
+        addons:
+            apt:
+                sources:
+                    - *default_sources
+                    - llvm-toolchain-precise-3.6
+                packages:
+                    - *default_packages
+                    - libclang-3.6-dev
+                    - llvm-3.6-dev
     include:
         env: CAIDE_LLVM_VER=3.7
-        packages:
-            - *default_packages
-            - libclang-3.7-dev
-            - llvm-3.7-dev
+        addons:
+            apt:
+                sources:
+                    - *default_sources
+                    - llvm-toolchain-precise-3.7
+                packages:
+                    - *default_packages
+                    - libclang-3.7-dev
+                    - llvm-3.7-dev
     include:
         env: CAIDE_LLVM_VER=GIT
-        packages:
-            - *default_packages
-            - cmake
+        addons:
+            apt:
+                sources:
+                    - *default_sources
+                    - kubuntu-backports
+                packages:
+                    - *default_packages
+                    - cmake
 
 
 script:  travis/build-and-test.sh
