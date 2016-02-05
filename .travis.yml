@@ -12,8 +12,8 @@ addons:
             - libclang-3.7-dev
             - llvm-3.7-dev
             - libedit-dev
-            - g++-4.8
-            - gcc-4.8
+            - g++-4.9
+            - gcc-4.9
 
 script:  travis/build-and-test.sh
 
