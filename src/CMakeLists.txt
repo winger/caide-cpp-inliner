@@ -9,7 +9,7 @@ enable_testing()
 if(CAIDE_USE_SYSTEM_CLANG)
     # Detect LLVM version
     find_package(LLVM REQUIRED CONFIG)
-    if(not LLVM_FOUND)
+    if(NOT LLVM_FOUND)
         message(FATAL_ERROR "LLVM not found! Make sure packages llvm-dev and libclang-dev are installed")
     endif()
 

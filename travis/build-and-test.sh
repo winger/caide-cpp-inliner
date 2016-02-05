@@ -1,8 +1,8 @@
 #!/bin/sh
 set -ev
 
-export CXX=g++-4.8
-export CC=gcc-4.8
+#export CXX=g++-4.8
+#export CC=gcc-4.8
 
 git submodule init
 git submodule update src/clang
