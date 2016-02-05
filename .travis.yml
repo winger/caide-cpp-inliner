@@ -6,7 +6,7 @@ git:
 addons:
     apt:
         sources:
-            - llvm-toolchain-precise
+            - llvm-toolchain-precise-3.7
             - ubuntu-toolchain-r-test
         packages:
             - libclang-3.7-dev
