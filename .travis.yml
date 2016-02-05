@@ -1,7 +1,17 @@
 language: cpp
-sudo: true
+sudo: false
 git:
     submodules: false
+
+apt:
+    sources:
+        - llvm-toolchain-precise
+        - ubuntu-toolchain-r-test
+    packages:
+        - libclang-3.7-dev
+        - llvm-3.7-dev
+        - g++-4.8
+        - gcc-4.8
 
 install: travis/install-prerequisites.sh
 script:  travis/build-and-test.sh
