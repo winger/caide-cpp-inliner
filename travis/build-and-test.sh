@@ -5,10 +5,10 @@ export CXX=g++-4.9
 export CC=gcc-4.9
 
 git submodule init
-git submodule update --depth 1 src/clang
+git submodule update src/clang
 if [ "$CAIDE_USE_SYSTEM_CLANG" = "OFF" ]
 then
-    git submodule update --depth 1 src/llvm
+    git submodule update src/llvm
 fi
 
 mkdir build
