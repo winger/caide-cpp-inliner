@@ -3,6 +3,10 @@ sudo: false
 git:
     submodules: false
 
+env:
+    - CAIDE_USE_SYSTEM_CLANG=ON
+    - CAIDE_USE_SYSTEM_CLANG=OFF
+
 addons:
     apt:
         sources: &default_sources
