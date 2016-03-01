@@ -96,6 +96,7 @@ else()
     # Ignore. It may be VS compiler that doesn't need any special flag
 endif()
 
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-rtti")
 
 if(MSVC)
     # Use the highest warning level for Visual Studio.
